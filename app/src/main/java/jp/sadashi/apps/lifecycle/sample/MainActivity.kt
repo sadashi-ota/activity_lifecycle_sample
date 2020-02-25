@@ -14,6 +14,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         lifecycle.addObserver(lifecycleObserver)
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container, MainFragment())
+            .commitNow()
+
         println("after : ${lifecycle.currentState}")
         println("onCreate end")
     }
