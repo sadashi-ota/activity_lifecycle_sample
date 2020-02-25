@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
-    private val lifecycleObserver = LifecycleObserverSample(this)
+    private val lifecycleObserver = LifecycleObserverSample(lifecycle, "Activity")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         println("onCreate start")

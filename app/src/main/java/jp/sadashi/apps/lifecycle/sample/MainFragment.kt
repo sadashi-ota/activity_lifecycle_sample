@@ -12,6 +12,7 @@ class MainFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         println("Fragment onCreate start")
         super.onCreate(savedInstanceState)
+        lifecycle.addObserver(LifecycleObserverSample(lifecycle, "Fragment"))
         println("Fragment onCreate end")
     }
 
@@ -34,6 +35,7 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         println("Fragment onViewCreated start")
         super.onViewCreated(view, savedInstanceState)
+        viewLifecycleOwner.lifecycle.addObserver(LifecycleObserverSample(viewLifecycleOwner.lifecycle, "FragmentView"))
         println("Fragment onViewCreated end")
     }
 
